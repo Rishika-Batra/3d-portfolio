@@ -32,7 +32,8 @@
   font-weight: 400;
   line-height: 48px;
   letter-spacing: 0.5px;
-  color: #eae5ec;
+  color: var(--textColor);
+  transition: color 0.4s ease;
 }
 
 @media only screen and (min-width: 600px) {

@@ -3,6 +3,7 @@ import * as THREE from "three";
 import setCharacter from "./utils/character";
 import setLighting from "./utils/lighting";
 import { useLoading } from "../../context/LoadingProvider";
+import { useTheme } from "../../context/ThemeContext";
 import handleResize from "./utils/resizeUtils";
 import {
   handleMouseMove,
@@ -18,6 +19,20 @@ const Scene = () => {
   const hoverDivRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef(new THREE.Scene());
   const { setLoading } = useLoading();
+  const { theme } = useTheme();
+  
+  const lightRef = useRef<any>(null);
+  const themeRef = useRef(theme);
+
+  useEffect(() => {
+    themeRef.current = theme;
+  }, [theme]);
+
+  useEffect(() => {
+    if (lightRef.current) {
+      lightRef.current.updateThemeLights(theme);
+    }
+  }, [theme]);
 
   const [character, setChar] = useState<THREE.Object3D | null>(null);
   useEffect(() => {
@@ -50,6 +65,7 @@ const Scene = () => {
       const clock = new THREE.Clock();
 
       const light = setLighting(scene);
+      lightRef.current = light;
       let progress = setProgress((value) => setLoading(value));
       const { loadCharacter } = setCharacter(renderer, scene, camera);
 
@@ -65,7 +81,7 @@ const Scene = () => {
           screenLight = character.getObjectByName("screenlight") || null;
           progress.loaded().then(() => {
             setTimeout(() => {
-              light.turnOnLights();
+              light.turnOnLights(themeRef.current);
               animations.startIntro();
             }, 2500);
           });

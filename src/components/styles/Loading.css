@@ -2,12 +2,14 @@
   position: fixed;
   width: 100vw;
   height: var(--vh);
-  background-color: #06010a;
+  background-color: #02010a;
   z-index: 999999999;
   display: flex;
   place-items: center;
   justify-content: center;
+  overflow: hidden;
 }
+
 
 .loading-button {
   padding: 20px 50px;
@@ -48,6 +50,7 @@
   --Lsize: 145px;
   padding: 6px;
   position: relative;
+  z-index: 3;
   min-width: 0px;
   min-height: 0px;
   border-radius: 100px;
@@ -311,6 +314,7 @@
 
 .loading-marquee {
   position: absolute;
+  z-index: 2;
   top: 50%;
   left: 0;
   width: 100%;

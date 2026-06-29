@@ -36,9 +36,21 @@ const setLighting = (scene: THREE.Scene) => {
   }
   const duration = 2;
   const ease = "power2.inOut";
-  function turnOnLights() {
+  function turnOnLights(theme: "dark" | "light") {
+    const isDark = theme === "dark";
+    const envInt = isDark ? 0.64 : 1.2;
+    
+    // Set initial color based on theme
+    if (!isDark) {
+      directionalLight.color.setHex(0xd9006c);
+      pointLight.color.setHex(0x7c3aed);
+    } else {
+      directionalLight.color.setHex(0x5eead4);
+      pointLight.color.setHex(0x22d3ee);
+    }
+
     gsap.to(scene, {
-      environmentIntensity: 0.64,
+      environmentIntensity: envInt,
       duration: duration,
       ease: ease,
     });
@@ -55,7 +67,31 @@ const setLighting = (scene: THREE.Scene) => {
     });
   }
 
-  return { setPointLight, turnOnLights };
+  function updateThemeLights(theme: "dark" | "light") {
+    const isDark = theme === "dark";
+    const targetDirColor = new THREE.Color(isDark ? 0x5eead4 : 0xd9006c);
+    const targetPointColor = new THREE.Color(isDark ? 0x22d3ee : 0x7c3aed);
+    const targetEnvInt = isDark ? 0.64 : 1.2;
+
+    gsap.to(directionalLight.color, {
+      r: targetDirColor.r,
+      g: targetDirColor.g,
+      b: targetDirColor.b,
+      duration: 0.8,
+    });
+    gsap.to(pointLight.color, {
+      r: targetPointColor.r,
+      g: targetPointColor.g,
+      b: targetPointColor.b,
+      duration: 0.8,
+    });
+    gsap.to(scene, {
+      environmentIntensity: targetEnvInt,
+      duration: 0.8,
+    });
+  }
+
+  return { setPointLight, turnOnLights, updateThemeLights };
 };
 
 export default setLighting;
