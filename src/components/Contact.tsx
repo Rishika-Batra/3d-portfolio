@@ -21,7 +21,7 @@ const Contact = () => {
             </p>
             <h4>Education</h4>
             <p>
-              B.Tech Computer Science, KIET Group of Institutions, Ghaziabad — 3rd Year (2022–2026)
+              B.Tech Computer Science, KIET Group of Institutions, Ghaziabad — 3rd Year (2024–2028)
             </p>
           </div>
           <div className="contact-box">
