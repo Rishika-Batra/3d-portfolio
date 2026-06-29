@@ -50,6 +50,37 @@ const setCharacter = (
                 mesh.frustumCulled = true;
               }
             });
+
+            // Add long hair to character
+            const headBone = character.getObjectByName('spine006'); console.log('headBone found:', headBone);
+            if (headBone) {
+              const hairMat = new THREE.MeshStandardMaterial({ color: new THREE.Color('#ff0000'), roughness: 0.8 });
+              
+              // Top hair cap
+              const capGeo = new THREE.SphereGeometry(0.22, 16, 8, 0, Math.PI * 2, 0, Math.PI * 0.5);
+              const cap = new THREE.Mesh(capGeo, hairMat);
+              cap.position.set(0, 0.08, 0);
+              headBone.add(cap);
+
+              // Long back hair
+              const backGeo = new THREE.CylinderGeometry(0.18, 0.10, 0.9, 8);
+              const back = new THREE.Mesh(backGeo, hairMat);
+              back.position.set(0, -0.35, -0.12);
+              headBone.add(back);
+
+              // Left side hair
+              const sideGeo = new THREE.CylinderGeometry(0.08, 0.05, 0.7, 6);
+              const leftHair = new THREE.Mesh(sideGeo, hairMat);
+              leftHair.position.set(-0.16, -0.28, 0);
+              leftHair.rotation.z = 0.15;
+              headBone.add(leftHair);
+
+              // Right side hair
+              const rightHair = new THREE.Mesh(sideGeo, hairMat);
+              rightHair.position.set(0.16, -0.28, 0);
+              rightHair.rotation.z = -0.15;
+              headBone.add(rightHair);
+            }
             resolve(gltf);
             setCharTimeline(character, camera);
             setAllTimeline();

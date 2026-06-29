@@ -16,18 +16,23 @@
   max-width: calc(100% - 15px);
 }
 .about-me h3 {
-  font-size: 25px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 7px;
   font-weight: 400;
   color: var(--accentColor);
+  margin-bottom: 20px;
 }
 
 .about-me p {
-  font-size: 33px;
-  font-weight: 600;
-  line-height: 36px;
-  letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0.5px;
+  color: #eae5ec;
 }
 
 @media only screen and (min-width: 600px) {
@@ -37,7 +42,7 @@
 }
 @media only screen and (min-width: 768px) {
   .about-me {
-    width: 500px;
+    width: 550px;
     max-width: calc(100% - 70px);
     transform: translateY(0%);
   }
@@ -59,13 +64,13 @@
     width: 50%;
   }
   .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
+    font-size: 2.1vw;
+    line-height: 3vw;
   }
 }
 @media only screen and (min-width: 1950px) {
   .about-me p {
     font-size: 2.5rem;
-    line-height: 2.7rem;
+    line-height: 3.2rem;
   }
 }

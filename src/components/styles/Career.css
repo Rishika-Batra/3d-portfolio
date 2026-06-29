@@ -17,7 +17,7 @@
   line-height: 70px;
   font-weight: 400;
   text-align: center;
-  background: linear-gradient(0deg, #0d9488, #ffffff);
+  background: linear-gradient(0deg, var(--accentColor), #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -55,14 +55,17 @@
   display: flex;
   width: 40%;
   justify-content: space-between;
-  gap: 50px;
+  align-items: center;
+  gap: 30px;
 }
 
 .career-info h3 {
-  font-size: 48px;
+  font-size: 36px;
   margin: 0;
   font-weight: 500;
-  line-height: 45px;
+  line-height: 40px;
+  white-space: nowrap;
+  min-width: fit-content;
 }
 
 .career-info h4 {
@@ -90,7 +93,7 @@
   width: 3px;
   height: 100%;
   background-image: linear-gradient(to top,
-      #14b8a6 20%,
+      rgba(255, 0, 144, 0.8) 20%,
       var(--accentColor) 50%,
       transparent 95%);
   max-height: 0%;
@@ -101,12 +104,12 @@
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
-  background-color: #14b8a6;
+  background-color: var(--accentColor);
   width: 10px;
   height: 10px;
   border-radius: 50px;
-  box-shadow: 0px 0px 5px 2px #67e8f9, 0px 0px 15px 8px #5eead4,
-    0px 0px 110px 20px #a5f3fc;
+  box-shadow: 0px 0px 5px 2px rgba(255, 0, 144, 0.4), 0px 0px 15px 8px var(--accentColor),
+    0px 0px 110px 20px rgba(255, 0, 144, 0.1);
   animation: timeline 0.8s linear infinite forwards;
 }
 
@@ -117,7 +120,7 @@
   50%,
   70%,
   90% {
-    box-shadow: 0px 0px 5px 2px #67e8f9;
+    box-shadow: 0px 0px 5px 2px rgba(255, 0, 144, 0.4);
   }
 
   10%,
@@ -126,19 +129,19 @@
   100%,
   64%,
   80% {
-    box-shadow: 0px 0px 5px 2px #67e8f9, 0px 0px 15px 5px #5eead4,
-      0px 0px 110px 20px #a5f3fc;
+    box-shadow: 0px 0px 5px 2px rgba(255, 0, 144, 0.4), 0px 0px 15px 5px var(--accentColor),
+      0px 0px 110px 20px rgba(255, 0, 144, 0.1);
   }
 }
 
 @keyframes timeline2 {
   0% {
-    box-shadow: 0px 0px 5px 2px #67e8f9;
+    box-shadow: 0px 0px 5px 2px rgba(255, 0, 144, 0.4);
   }
 
   100% {
-    box-shadow: 0px 0px 5px 2px #67e8f9, 0px 0px 15px 5px #5eead4,
-      0px 0px 110px 20px #a5f3fc;
+    box-shadow: 0px 0px 5px 2px rgba(255, 0, 144, 0.4), 0px 0px 15px 5px var(--accentColor),
+      0px 0px 110px 20px rgba(255, 0, 144, 0.1);
   }
 }
 

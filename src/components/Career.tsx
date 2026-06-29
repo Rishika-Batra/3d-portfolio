@@ -15,58 +15,37 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Co-Founder</h4>
-                <h5>CallHQ.ai</h5>
+                <h4>Event Team Member</h4>
+                <h5>E-Cell, KIET</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>OCT-PRES</h3>
             </div>
             <p>
-              Building CallHQ.ai, a voice AI platform for
-              automating customer calls, support, and conversions.
+              Actively contribute to planning and executing entrepreneurial events that foster innovation and startup culture on campus. Organized IdeaTex 2.0, Endeavour 2025, SIH 2024, SIH 2025, Innotech 2025, IdeaTex 3.0, Endeavour 2026.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Adobe</h4>
-                <h5>6+ years · Noida</h5>
+                <h4>Web-Dev Member</h4>
+                <h5>GDSC, KIET</h5>
               </div>
-              <h3>2017–24</h3>
+              <h3>2024–26</h3>
             </div>
             <p>
-              Senior Lead Software Engineer (Feb 2024 – May 2024). Lead Software
-              Engineer (Feb 2021 – Feb 2024). Software Engineer II (Dec 2017 –
-              Feb 2021): internationalization, globalization, and localization for
-              Adobe Technical Communication Suite; functional and linguistic testing
-              strategy; in-house tooling; collaboration with product and engineering
-              for high-quality localized releases.
+              Collaborate on building and enhancing web projects while strengthening my frontend development skills.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Consultant</h4>
-                <h5>Genpact Headstrong </h5>
+                <h4>UI/UX Member</h4>
+                <h5>DSDL, KIET</h5>
               </div>
-              <h3>2016–17</h3>
+              <h3>OCT-PRES</h3>
             </div>
             <p>
-              Sep 2016 – Nov 2017. Developed and maintained WCF services consumed
-              by the UI; deployment support across environments; NUnit tests and
-              coverage; bug fixes from QA and users; database work.
-            </p>
-          </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Sf Engineer</h4>
-                <h5>Infogain</h5>
-              </div>
-              <h3>2013-16</h3>
-            </div>
-            <p>
-              Software engineering across enterprise projects, contributing to
-              design, development, and delivery of business applications.
+              Collaborated with the club team to design UI/UX elements for presentations, posters, and event materials, ensuring clear communication and visual consistency.
             </p>
           </div>
         </div>

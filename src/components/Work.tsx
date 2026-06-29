@@ -1,65 +1,51 @@
-import { useState, useCallback } from "react";
 import "./styles/Work.css";
-import WorkImage from "./WorkImage";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "CallHQ",
-    category: "Voice AI Calling Platform",
-    tools: "Voice AI, Calling Automation, CRM Integrations",
-    image: "/images/callhq.png",
-    link: "https://callhq.ai",
+    title: "Heart Disease Intelligence",
+    category: "Medical AI Diagnostic Platform",
+    desc: "Clinical ML model predicting cardiovascular risk with a 21-feature dataset and detailed SHAP explainability visualizations.",
+    tools: "Python, Machine Learning, Scikit-Learn, Flask, Pandas, NumPy",
+    link: "https://github.com/Rishika-Batra/heart-disease-analysis-21",
   },
   {
-    title: "Whatsapp Automation",
-    category: "WABA Application",
-    tools: "WhatsApp Business API, Workflow Automation, Notifications",
-    image: "/images/whatsapp.png",
-    link: "https://whatsapp.callhq.ai",
+    title: "Chat App",
+    category: "Real-Time Conversational Platform",
+    desc: "Real-time communication app using custom WebSocket channels, user status tracking, and end-to-end conversation logs storage.",
+    tools: "React, Node.js, WebSockets, Express, Socket.io, MongoDB",
+    link: "https://chat-app-client-ten-rho.vercel.app/login",
   },
   {
-    title: "Broki",
-    category: "Real Estate Platform for FnB Industry",
-    tools: "Property Discovery, Lead Management, Marketplace Workflows",
-    image: "/images/broki.png",
-    link: "https://broki.in",
+    title: "E-Commerce Analytics Engine",
+    category: "ML-Powered Customer Intelligence",
+    desc: "An analytics platform offering detailed cohort analysis, funnels visualization, revenue trend indicators, and sales forecasting.",
+    tools: "Python, FastAPI, XGBoost, BigQuery, Data Visualization",
+    link: "https://ecommerce-analytics-seven.vercel.app",
   },
   {
-    title: "Orrdr.com",
-    category: "Ecommerce Platform and Mobile App",
-    tools: "Ecommerce, Mobile Experience, Order Management",
-    image: "/images/orrdr.png",
-    link: "https://orrdr.com",
+    title: "Job Tracker",
+    category: "Application Pipeline CRM",
+    desc: "A simplified kanban dashboard for tracking professional opportunities, interview schedules, and application feedback cycles.",
+    tools: "React, Supabase, PostgreSQL, Google Auth, TypeScript",
+    link: "https://jobtracker-version1-git-main-rishikas-projects-5ce4dea6.vercel.app/login",
+  },
+  {
+    title: "FinSight-AI",
+    category: "AI-Powered Financial Insights",
+    desc: "Financial intelligence and portfolio analysis dashboard featuring multi-factor asset tracking and market sentiment indicators.",
+    tools: "Python, NLP, Machine Learning, Sentiment Analysis",
+    link: "https://github.com/Rishika-Batra/FinSight-AI",
+  },
+  {
+    title: "Skye — Weather App",
+    category: "Geolocation-Aware Weather Dashboard",
+    desc: "A fully responsive local weather dashboard integrating geocoding, current conditions reports, and animated charts.",
+    tools: "JavaScript, OpenWeather API, Chart.js, CSS, HTML5 Geolocation",
+    link: "https://weather-eta-bice.vercel.app",
   },
 ];
 
 const Work = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const goToSlide = useCallback(
-    (index: number) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setCurrentIndex(index);
-      setTimeout(() => setIsAnimating(false), 500);
-    },
-    [isAnimating]
-  );
-
-  const goToPrev = useCallback(() => {
-    const newIndex =
-      currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
-    goToSlide(newIndex);
-  }, [currentIndex, goToSlide]);
-
-  const goToNext = useCallback(() => {
-    const newIndex =
-      currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
-    goToSlide(newIndex);
-  }, [currentIndex, goToSlide]);
-
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
@@ -67,77 +53,32 @@ const Work = () => {
           My <span>Work</span>
         </h2>
 
-        <div className="carousel-wrapper">
-          {/* Navigation Arrows */}
-          <button
-            className="carousel-arrow carousel-arrow-left"
-            onClick={goToPrev}
-            aria-label="Previous project"
-            data-cursor="disable"
-          >
-            <MdArrowBack />
-          </button>
-          <button
-            className="carousel-arrow carousel-arrow-right"
-            onClick={goToNext}
-            aria-label="Next project"
-            data-cursor="disable"
-          >
-            <MdArrowForward />
-          </button>
-
-          {/* Slides */}
-          <div className="carousel-track-container">
-            <div
-              className="carousel-track"
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <a
+              key={index}
+              className="project-card"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="disable"
             >
-              {projects.map((project, index) => (
-                <div className="carousel-slide" key={index}>
-                  <div className="carousel-content">
-                    <div className="carousel-info">
-                      <div className="carousel-number">
-                        <h3>0{index + 1}</h3>
-                      </div>
-                      <div className="carousel-details">
-                        <h4>{project.title}</h4>
-                        <p className="carousel-category">
-                          {project.category}
-                        </p>
-                        <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-image-wrapper">
-                      <WorkImage
-                        image={project.image}
-                        alt={project.title}
-                        link={project.link}
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Dot Indicators */}
-          <div className="carousel-dots">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
-                  }`}
-                onClick={() => goToSlide(index)}
-                aria-label={`Go to project ${index + 1}`}
-                data-cursor="disable"
-              />
-            ))}
-          </div>
+              <div>
+                <div className="project-idx">0{index + 1}</div>
+                <div className="project-name">{project.title}</div>
+                <div className="project-category">{project.category}</div>
+                <p className="project-desc">{project.desc}</p>
+              </div>
+              <div className="project-tags">
+                {project.tools.split(", ").slice(0, 3).map((tag, tagIndex) => (
+                  <span className="project-tag" key={tagIndex}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="project-arrow">↗</div>
+            </a>
+          ))}
         </div>
       </div>
     </div>

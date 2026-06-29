@@ -235,8 +235,8 @@
   font-size: 13px;
   font-weight: 400;
   padding: 2px 7px;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid #ffffff50;
+  background-color: rgba(244, 114, 182, 0.08);
+  border: 1px solid rgba(244, 114, 182, 0.3);
   border-radius: 30px;
 }
 @media only screen and (max-width: 1600px) {
@@ -383,6 +383,12 @@
   .what-box {
     max-width: calc(100% - 25px);
     margin: 0;
+  }
+}
+@media only screen and (min-width: 901px) {
+  .what-box:first-child {
+    justify-content: flex-start;
+    padding-left: 10%;
   }
 }
 @media only screen and (min-width: 1950px) {

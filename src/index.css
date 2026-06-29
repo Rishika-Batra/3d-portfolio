@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 :root {
-  font-family: "Geist", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 
   font-optical-sizing: auto;
   font-style: normal;
@@ -18,8 +18,8 @@
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  --accentColor: #5eead4;
-  --backgroundColor: #0a0e17;
+  --accentColor: #ff0090;
+  --backgroundColor: #06010a;
   --vh: 100vh;
   --vh: 100svh;
 }
@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Geist", sans-serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
 body {
@@ -66,7 +66,7 @@ main {
 body {
   margin: 0;
   height: auto;
-  background-color: #050810;
+  background-color: var(--backgroundColor);
   flex-grow: 1;
   --cWidth: calc(100% - 30px);
   --cMaxWidth: 1920px;
