@@ -37,11 +37,11 @@ const projects = [
     link: "https://github.com/Rishika-Batra/FinSight-AI",
   },
   {
-    title: "Skye — Weather App",
-    category: "Geolocation-Aware Weather Dashboard",
-    desc: "A fully responsive local weather dashboard integrating geocoding, current conditions reports, and animated charts.",
-    tools: "JavaScript, OpenWeather API, Chart.js, CSS, HTML5 Geolocation",
-    link: "https://weather-eta-bice.vercel.app",
+    title: "NanoSage",
+    category: "Custom Language Model (LLM)",
+    desc: "A GPT-style language model built from scratch in PyTorch, featuring a custom BPE tokenizer and deployed as a full-stack React chat app.",
+    tools: "PyTorch, React, Python, Transformers, Machine Learning",
+    link: "https://github.com/Rishika-Batra/NanoSage",
   },
 ];
 
