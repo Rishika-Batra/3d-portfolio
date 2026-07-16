@@ -2,11 +2,11 @@ import "./styles/Work.css";
 
 const projects = [
   {
-    title: "Heart Disease Intelligence",
-    category: "Medical AI Diagnostic Platform",
-    desc: "Clinical ML model predicting cardiovascular risk with a 21-feature dataset and detailed SHAP explainability visualizations.",
-    tools: "Python, Machine Learning, Scikit-Learn, Flask, Pandas, NumPy",
-    link: "https://github.com/Rishika-Batra/heart-disease-analysis-21",
+    title: "CivicSense",
+    category: "Civic Issue Reporting Platform",
+    desc: "A civic issue reporting platform where citizens can pin, photograph, and track urban problems for city officers to triage and resolve.",
+    tools: "TypeScript, Python, CSS, JavaScript, HTML",
+    link: "https://github.com/Rishika-Batra/CivicSense",
   },
   {
     title: "Chat App",
