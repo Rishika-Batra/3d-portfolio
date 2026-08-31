@@ -15,10 +15,22 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
+                <h4>Chief Operating Officer</h4>
+                <h5>Tensorik</h5>
+              </div>
+              <h3>AUG-PRES</h3>
+            </div>
+            <p>
+              Chief Operating Officer at Tensorik, driving operational excellence, leading strategic initiatives, and overseeing daily business operations to enhance organizational growth.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
                 <h4>Event Team Member</h4>
                 <h5>E-Cell, KIET</h5>
               </div>
-              <h3>OCT-PRES</h3>
+              <h3>2024–26</h3>
             </div>
             <p>
               Actively contribute to planning and executing entrepreneurial events that foster innovation and startup culture on campus. Organized IdeaTex 2.0, Endeavour 2025, SIH 2024, SIH 2025, Innotech 2025, IdeaTex 3.0, Endeavour 2026.
@@ -42,7 +54,7 @@ const Career = () => {
                 <h4>UI/UX Member</h4>
                 <h5>DSDL, KIET</h5>
               </div>
-              <h3>OCT-PRES</h3>
+              <h3>2024–26</h3>
             </div>
             <p>
               Collaborated with the club team to design UI/UX elements for presentations, posters, and event materials, ensuring clear communication and visual consistency.

@@ -2,11 +2,39 @@ import "./styles/Work.css";
 
 const projects = [
   {
+    title: "Sentinel-Moderate",
+    category: "AI Content Moderation",
+    desc: "A full-stack, event-driven content moderation platform that leverages AWS AI services to automatically analyze user-generated text and image content.",
+    tools: "TypeScript, AWS, Node.js",
+    link: "https://github.com/Rishika-Batra/sentinel-moderate",
+  },
+  {
+    title: "SentinelAuth",
+    category: "Security Risk Scoring",
+    desc: "A real-time login risk-scoring system inside an AWS Cognito + Spring Boot auth flow, using a custom autoencoder to flag account takeovers.",
+    tools: "Python, Spring Boot, AWS, Machine Learning",
+    link: "https://github.com/Rishika-Batra/sentinelauth",
+  },
+  {
+    title: "Job Tailor",
+    category: "AI Resume Optimizer",
+    desc: "An AI-powered tool that analyzes how well a resume matches a job posting, generating tailored resume bullet rewrites and a draft cover letter.",
+    tools: "JavaScript, LLMs, Prompt Engineering",
+    link: "https://github.com/Rishika-Batra/job-tailor",
+  },
+  {
     title: "CivicSense",
     category: "Civic Issue Reporting Platform",
     desc: "A civic issue reporting platform where citizens can pin, photograph, and track urban problems for city officers to triage and resolve.",
     tools: "TypeScript, Python, CSS, JavaScript, HTML",
     link: "https://github.com/Rishika-Batra/CivicSense",
+  },
+  {
+    title: "NanoSage",
+    category: "Custom Language Model (LLM)",
+    desc: "A GPT-style language model built from scratch in PyTorch, featuring a custom BPE tokenizer and deployed as a full-stack React chat app.",
+    tools: "PyTorch, React, Python, Transformers, Machine Learning",
+    link: "https://github.com/Rishika-Batra/NanoSage",
   },
   {
     title: "Chat App",
@@ -35,13 +63,6 @@ const projects = [
     desc: "Financial intelligence and portfolio analysis dashboard featuring multi-factor asset tracking and market sentiment indicators.",
     tools: "Python, NLP, Machine Learning, Sentiment Analysis",
     link: "https://github.com/Rishika-Batra/FinSight-AI",
-  },
-  {
-    title: "NanoSage",
-    category: "Custom Language Model (LLM)",
-    desc: "A GPT-style language model built from scratch in PyTorch, featuring a custom BPE tokenizer and deployed as a full-stack React chat app.",
-    tools: "PyTorch, React, Python, Transformers, Machine Learning",
-    link: "https://github.com/Rishika-Batra/NanoSage",
   },
 ];
 
