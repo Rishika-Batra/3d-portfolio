@@ -69,7 +69,7 @@ const projects = [
 ];
 
 // Duplicate array 30 times for "infinite" scroll feeling (270 items)
-const displayProjects = Array(30).fill(projects).flat();
+const displayProjects = Array(30).fill(projects).flat() as typeof projects;
 
 const Work = () => {
   const container = useRef<HTMLDivElement>(null);
