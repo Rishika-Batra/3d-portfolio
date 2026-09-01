@@ -1,7 +1,8 @@
-/* ── Work Section ── */
 .work-section {
   position: relative;
   z-index: 1;
+  /* clip only top/bottom, allow right bleed for globe */
+  overflow: visible;
   background-color: #06010a;
   padding: 80px 0;
 }
@@ -23,6 +24,31 @@
 
 .work-container {
   margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Pink Sparkling Stars Background ─────────────────────────────────────── */
+.work-stars-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.work-star {
+  position: absolute;
+  background: #ec4899; /* Vibrant Pink */
+  border-radius: 50%;
+  animation: work-star-twinkle linear infinite;
+  box-shadow: 0 0 5px 1px rgba(236, 72, 153, 0.6);
+}
+
+@keyframes work-star-twinkle {
+  0%   { opacity: 0.1; transform: scale(0.8); }
+  50%  { opacity: 1.0; transform: scale(1.2); }
+  100% { opacity: 0.1; transform: scale(0.8); }
 }
 
 /* Projects Grid */
@@ -31,10 +57,32 @@
   position: relative;
 }
 
+/* ── Decorative globe accent ─────────────────────────────────────────────── */
+.globe-accent {
+  position: absolute;       /* relative to .projects-wrapper */
+  top: 50%;                 /* vertically centered with the cards */
+  right: -550px;            /* Shifted much further right so cards are visible */
+  transform: translateY(-50%);
+  width: 1000px;
+  height: 1000px;
+  z-index: 0;               /* Behind the cards */
+  pointer-events: none;
+}
+
+/* Both fixed landing-circle blobs bleed into the Work section when scrolled.
+   Hide them here so neither overlaps the globe or card content. */
+.landing-circle1,
+.landing-circle2 {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 .projects-grid {
   display: flex;
   flex-wrap: nowrap;
   gap: 50px;
+  position: relative;
+  z-index: 2; /* Ensure cards render above the globe */
   margin-top: 40px;
   align-items: center;
   padding-left: calc(50% - 275px);

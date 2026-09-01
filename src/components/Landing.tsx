@@ -1,10 +1,12 @@
 import { PropsWithChildren } from "react";
 import "./styles/Landing.css";
+import ConstellationBackground from "./ConstellationBackground";
 
 const Landing = ({ children }: PropsWithChildren) => {
   return (
     <>
       <div className="landing-section" id="landingDiv">
+        <ConstellationBackground />
         <div className="landing-container">
           <div className="landing-intro">
             <h2>Hello! I'm</h2>

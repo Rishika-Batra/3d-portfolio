@@ -32,7 +32,7 @@
   font-weight: 400;
   line-height: 48px;
   letter-spacing: 0.5px;
-  color: var(--textColor);
+  color: #f8f8f8; /* Brighter white instead of var(--textColor) */
   transition: color 0.4s ease;
 }
 

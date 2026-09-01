@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import "./styles/Work.css";
+import CosmicGlobe from "./CosmicGlobe";
 
 const projects = [
   {
@@ -71,6 +72,14 @@ const projects = [
 // Duplicate array 30 times for "infinite" scroll feeling (270 items)
 const displayProjects = Array(30).fill(projects).flat() as typeof projects;
 
+const WORK_STARS = Array.from({ length: 120 }, () => ({
+  x: `${Math.random() * 100}%`,
+  y: `${Math.random() * 100}%`,
+  size: `${1 + Math.random() * 2}px`,
+  delay: `${Math.random() * 4}s`,
+  duration: `${2 + Math.random() * 4}s`,
+}));
+
 const Work = () => {
   const container = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -112,12 +121,35 @@ const Work = () => {
 
   return (
     <div className="work-section" id="work" ref={container}>
+      {/* Pink sparkling stars background */}
+      <div className="work-stars-bg">
+        {WORK_STARS.map((s, i) => (
+          <div
+            key={i}
+            className="work-star"
+            style={{
+              left: s.x,
+              top: s.y,
+              width: s.size,
+              height: s.size,
+              animationDelay: s.delay,
+              animationDuration: s.duration,
+            }}
+          />
+        ))}
+      </div>
+
       <div className="work-container section-container">
         <h2>
           My <span>Work</span>
         </h2>
 
         <div className="projects-wrapper">
+          {/* Globe anchored to right edge of the cards wrapper */}
+          <div className="globe-accent">
+            <CosmicGlobe />
+          </div>
+
           <div className="projects-grid" ref={gridRef} onScroll={handleScroll}>
           {displayProjects.map((project, index) => {
             const originalIndex = index % projects.length;
