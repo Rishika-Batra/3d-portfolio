@@ -164,12 +164,7 @@ const CellularBackground = () => {
     resize();
 
     let raf = 0;
-    let lastT = 0;
-
     const tick = (t: number) => {
-      const dt = Math.min((t - lastT) / 1000, 0.05);
-      lastT = t;
-
       // --- smooth mouse lerp ---
       if (rawMouse.active) {
         smoothMouse.x += (rawMouse.x - smoothMouse.x) * 0.08;
@@ -244,7 +239,7 @@ const CellularBackground = () => {
       raf = requestAnimationFrame(tick);
     };
 
-    raf = requestAnimationFrame((t) => { lastT = t; raf = requestAnimationFrame(tick); });
+    raf = requestAnimationFrame(tick);
 
     return () => {
       cancelAnimationFrame(raf);

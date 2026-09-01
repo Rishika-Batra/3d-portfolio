@@ -23,7 +23,7 @@ const getRandomColor = () => {
   return COLORS[2]; // 20% teal
 };
 
-interface Node {
+interface ConstellationNode {
   x: number;
   y: number;
   vx: number;
@@ -45,7 +45,7 @@ const ConstellationBackground: React.FC = () => {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let nodes: Node[] = [];
+    let nodes: ConstellationNode[] = [];
     let width = 0;
     let height = 0;
     const mouse = { x: -1000, y: -1000 };
@@ -115,16 +115,16 @@ const ConstellationBackground: React.FC = () => {
 
       // Only care if the click is somewhat near the canvas bounds 
       // (though it responds anywhere, we just map it)
-      let nearestNode: Node | null = null;
+      let nearestNode: ConstellationNode | null = null;
       let minDist = Infinity;
 
-      nodes.forEach((n) => {
+      for (const n of nodes) {
         const dist = Math.hypot(n.x - cx, n.y - cy);
         if (dist < minDist) {
           minDist = dist;
           nearestNode = n;
         }
-      });
+      }
 
       if (nearestNode) {
         nearestNode.pulseTimer = 1.0;
