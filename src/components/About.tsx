@@ -7,7 +7,8 @@ const About = () => {
         <h3 className="title">About Me</h3>
         <p className="para">
           I am a 3rd-year Computer Science student at KIET Group of Institutions, Ghaziabad,
-          specializing in Full Stack Development and AI/ML. I build intelligent, responsive web applications
+          specializing in Full Stack Development and AI/ML. As a LeetCode Knight, I have a strong foundation
+          in problem-solving and algorithms. I build intelligent, responsive web applications
           with a focus on clean, efficient code.
         </p>
       </div>
