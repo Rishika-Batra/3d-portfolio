@@ -51,6 +51,28 @@
   100% { opacity: 0.1; transform: scale(0.8); }
 }
 
+/* Glitter layer masked by cursor */
+.work-stars-glitter {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: radial-gradient(circle 250px at var(--mouse-x, -1000px) var(--mouse-y, -1000px), black, transparent);
+  mask-image: radial-gradient(circle 250px at var(--mouse-x, -1000px) var(--mouse-y, -1000px), black, transparent);
+}
+
+.work-stars-glitter .work-star {
+  background: #ffffff;
+  box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.8), 0 0 20px 5px rgba(236, 72, 153, 0.9);
+  animation: work-star-glitter-anim 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes work-star-glitter-anim {
+  0%   { opacity: 0.7; transform: scale(1.5); }
+  100% { opacity: 1.0; transform: scale(2.8); }
+}
+
 /* Projects Grid */
 .projects-wrapper {
   width: 100%;

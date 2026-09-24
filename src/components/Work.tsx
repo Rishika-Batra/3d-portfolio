@@ -126,8 +126,18 @@ const Work = () => {
     }
   };
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (container.current) {
+      const rect = container.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      container.current.style.setProperty('--mouse-x', `${x}px`);
+      container.current.style.setProperty('--mouse-y', `${y}px`);
+    }
+  };
+
   return (
-    <div className="work-section" id="work" ref={container}>
+    <div className="work-section" id="work" ref={container} onMouseMove={handleMouseMove}>
       {/* Pink sparkling stars background */}
       <div className="work-stars-bg">
         {WORK_STARS.map((s, i) => (
@@ -141,6 +151,24 @@ const Work = () => {
               height: s.size,
               animationDelay: s.delay,
               animationDuration: s.duration,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Glittering stars layer (masked to cursor) */}
+      <div className="work-stars-glitter">
+        {WORK_STARS.map((s, i) => (
+          <div
+            key={`glitter-${i}`}
+            className="work-star"
+            style={{
+              left: s.x,
+              top: s.y,
+              width: s.size,
+              height: s.size,
+              animationDelay: s.delay,
+              animationDuration: '0.4s',
             }}
           />
         ))}
