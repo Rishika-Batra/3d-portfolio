@@ -12,6 +12,13 @@ const projects = [
     link: "https://github.com/Rishika-Batra/sentinel-moderate",
   },
   {
+    title: "Sovereign AI",
+    category: "Secure RAG Platform",
+    desc: "Sovereign AI is a locally-hosted, secure Retrieval-Augmented Generation (RAG) platform with robust document processing capabilities and workspace isolation. It is designed to ensure complete data privacy by keeping all databases, document ingestion, and AI model inference strictly within an isolated local network environment.",
+    tools: "Python, RAG, Local AI",
+    link: "https://github.com/Rishika-Batra/sovereign-ai",
+  },
+  {
     title: "SentinelAuth",
     category: "Security Risk Scoring",
     desc: "A real-time login risk-scoring system integrated seamlessly into an AWS Cognito and Spring Boot authentication flow. It utilizes a custom machine learning autoencoder to dynamically flag and prevent account takeover attempts based on user behavior anomalies, significantly enhancing platform security.",
